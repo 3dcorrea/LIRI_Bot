@@ -8,10 +8,10 @@ exports.spotify = {
     secret: process.env.secretId,
 };
 
-
+// getting error for "secret" value, line 14
 var spotify = new Spotify({
     id: a5bd103a42ec4ddc9649ce410220ae4b,
-    secret: 4177056fe0f34fabb39fe31f162f081a
+    secret: 4177056fe0f34fabb39fe31f162f081a,
 });
 
 spotify
