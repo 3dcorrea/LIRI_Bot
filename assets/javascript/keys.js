@@ -28,7 +28,7 @@ spotify
     });
 
 
-// ----------------------------------------------------------
+// ----------------------------------------------------------New code from Spotify api doc
 var express = require('express'); // Express web server framework
 var request = require('request'); // "Request" library
 var cors = require('cors');
@@ -172,7 +172,7 @@ app.get('/refresh_token', function (req, res) {
 console.log('Listening on 8888');
 app.listen(8888);
 
-// -------------------------------------------------------------------- New code from the Spotify api doc
+// -------------------------------------------------------------------- New code from Spotify api doc
 
 axios.get('')
     .then(response => {
