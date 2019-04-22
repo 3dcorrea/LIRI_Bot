@@ -9,7 +9,7 @@ exports.spotify = {
     secret: process.env.secretId,
 };
 
-// getting error for "secret" value, line 14
+// error for "secret" value, line 14
 var spotify = new Spotify({
     id: a5bd103a42ec4ddc9649ce410220ae4b,
     secret: 4177056 fe0f34fabb39fe31f162f081a,
@@ -29,15 +29,15 @@ spotify
 
 
 // ----------------------------------------------------------New code from Spotify api doc
-var express = require('express'); // Express web server framework
-var request = require('request'); // "Request" library
-var cors = require('cors');
-var querystring = require('querystring');
-var cookieParser = require('cookie-parser');
+// var express = require('express'); // Express web server framework
+// var request = require('request'); // "Request" library
+// var cors = require('cors');
+// var querystring = require('querystring');
+// var cookieParser = require('cookie-parser');
 
-var client_id = 'CLIENT_ID'; // Your client id
-var client_secret = 'CLIENT_SECRET'; // Your secret
-var redirect_uri = 'REDIRECT_URI'; // Your redirect uri
+// var client_id = 'CLIENT_ID'; // Your client id
+// var client_secret = 'CLIENT_SECRET'; // Your secret
+// var redirect_uri = 'REDIRECT_URI'; // Your redirect uri
 
 /**
  * Generates a random string containing numbers and letters
