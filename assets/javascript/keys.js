@@ -172,7 +172,7 @@ app.get('/refresh_token', function (req, res) {
 console.log('Listening on 8888');
 app.listen(8888);
 
-// --------------------------------------------------------------------
+// -------------------------------------------------------------------- New code from the Spotify api doc
 
 axios.get('')
     .then(response => {
