@@ -3,11 +3,10 @@ require("dotenv").config();
 
 var keys = require("./keys.js");
 var spotify = require('node-spotify-api');
-var omdb = require("omdb");
+
 // var spotify = new Spotify(keys.spotify);
 
 var command = process.argv[2];
-var command2 = process.argv[3];
 
 
 function spotifyGet(song) {
@@ -31,7 +30,33 @@ if (command === 'spotify-this') {
     // spotifyGet(command2);
 }
 
-var movieArray = {};
+var axios = require("axios");
+
+var nodeArgs = process.argv[2];
+
+var movieName = "";
+
+for (var i = 2; i < nodeArgs.length; i++) {
+
+  if (i > 2 && i < nodeArgs.length) {
+    movieName = movieName + "+" + nodeArgs[i];
+  }
+  else {
+    movieName += nodeArgs[i];
+
+  }
+}
+"http://www.omdbapi.com/?apikey=[yourkey]&"
+
+var queryUrl = "http://www.omdbapi.com/?=apikey=[61d358d6]&" + movieName;
+
+console.log(queryUrl);
+
+axios.get(queryUrl).then(
+  function(response) {
+    console.log("Release Year: " + response.data.Year);
+  }
+);
 
 
 
