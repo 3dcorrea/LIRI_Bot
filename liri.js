@@ -1,21 +1,35 @@
-console.log('this is loaded');
+require("dotenv").config();
 
-require('dotenv').config();
 
-// var spotify = new Spotify({
+var keys = require("./keys.js");
+var spotify = require('node-spotify-api');
 
-// });
+// var spotify = new Spotify(keys.spotify);
 
-// var data = JSON.parse(this.response)
+var command = process.argv[2];
+var command2 = process.argv[3];
 
-// exports.spotify = {
-//     id: process.env.clientId,
-//     secret: process.env.secretId,
-// };
-exports.spotify = {
-    id: process.env.SPOTIFY_ID,
-    secret: process.env.SPOTIFY_SECRET
-};
+
+function spotifyGet(song) {
+    // error for "secret" value, line 14
+
+    spotify
+        .search({
+            type: 'track',
+            query: 'All the Small Things'
+        })
+        .then(function (response) {
+            console.log(response);
+        })
+        .catch(function (err) {
+            console.log(err);
+        });
+}
+
+if (command === 'spotify-this') {
+    console.log("hello in spotify-this");
+    // spotifyGet(command2);
+}
 
 
 
