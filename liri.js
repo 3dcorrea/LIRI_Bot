@@ -3,7 +3,7 @@ require("dotenv").config();
 
 var keys = require("./keys.js");
 var spotify = require('node-spotify-api');
-
+var omdb = require("omdb");
 // var spotify = new Spotify(keys.spotify);
 
 var command = process.argv[2];
@@ -31,7 +31,7 @@ if (command === 'spotify-this') {
     // spotifyGet(command2);
 }
 
-
+var movieArray = {};
 
 
 
