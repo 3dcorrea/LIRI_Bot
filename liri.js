@@ -7,8 +7,6 @@ var spotify = require('node-spotify-api');
 // var spotify = new Spotify(keys.spotify);
 
 var command = process.argv[2];
-
-
 function spotifyGet(song) {
     // error for "secret" value, line 14
 
