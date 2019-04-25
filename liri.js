@@ -53,6 +53,18 @@ axios.get(queryUrl).then(
     console.log("Release Year: " + response.data.Year);
   }
 );
+
+
+
+// axios GET function materials
+axios.get(queryUrl).then(function (results) {
+"https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp";
+
+
+
+
+
+
 // axios.get('')
 //     .then(response => {
 //         console.log(response.data.url);
