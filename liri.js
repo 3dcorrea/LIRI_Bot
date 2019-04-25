@@ -27,26 +27,24 @@ function spotifyGet(song) {
 
 if (command === 'spotify-this') {
     console.log("hello in spotify-this");
-    // spotifyGet(command2);
 }
 
 var axios = require("axios");
 
-var nodeArgs = process.argv[2];
+var input = process.argv[2];
 
 var movieName = "";
 
-for (var i = 2; i < nodeArgs.length; i++) {
+for (var i = 2; i < input.length; i++) {
 
-  if (i > 2 && i < nodeArgs.length) {
-    movieName = movieName + "+" + nodeArgs[i];
+  if (i > 2 && i < input.length) {
+    movieName = movieName + "+" + input[i];
   }
   else {
-    movieName += nodeArgs[i];
+    movieName += input[i];
 
   }
 }
-"http://www.omdbapi.com/?apikey=[yourkey]&"
 
 var queryUrl = "http://www.omdbapi.com/?=apikey=[61d358d6]&" + movieName;
 
