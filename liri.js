@@ -56,14 +56,12 @@ axios.get(omdbUrl).then(
 
 
 // axios GET function materials
-axios.get(queryUrl).then(function (results) {
-            "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp";
+axios.get(bandUrl).then(function (results) {
 }
 
- axios.get('')
+ axios.get("https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp";)
  .then(response => {
-     console.log(response.data.url);
-     console.log(response.data.explanation);
+     console.log(response.data);
  })
  .catch(error => {
      console.log(error);
