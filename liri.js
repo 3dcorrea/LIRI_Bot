@@ -3,12 +3,12 @@ require("dotenv").config();
 
 var keys = require("./keys.js");
 var spotify = require('node-spotify-api');
+var axios = require("axios");
 
-// var spotify = new Spotify(keys.spotify);
+var userInput = process.argv[2];
 
-var command = process.argv[2];
+
 function spotifyGet(song) {
-    // error for "secret" value, line 14
 
     spotify
         .search({
@@ -23,53 +23,48 @@ function spotifyGet(song) {
         });
 }
 
-if (command === 'spotify-this') {
+if (userInput === 'spotify-this') {
     console.log("hello in spotify-this");
 }
 
-var axios = require("axios");
 
-var input = process.argv[2];
+
 
 var movieName = "";
 
 for (var i = 2; i < input.length; i++) {
 
-  if (i > 2 && i < input.length) {
-    movieName = movieName + "+" + input[i];
-  }
-  else {
-    movieName += input[i];
+    if (i > 2 && i < input.length) {
+        movieName = movieName + "+" + input[i];
+    } else {
+        movieName += input[i];
 
-  }
+    }
 }
 
-var queryUrl = "http://www.omdbapi.com/?=apikey=[61d358d6]&" + movieName;
+var omdbUrl = "http://www.omdbapi.com/?=apikey=[61d358d6]&" + movieName;
 
-console.log(queryUrl);
+console.log(ombdUrl);
 
-axios.get(queryUrl).then(
-  function(response) {
-    console.log("Release Year: " + response.data.Year);
-  }
+axios.get(omdbUrl).then(
+    function (response) {
+        console.log("Release Year: " + response.data.Year);
+    }
 );
+
 
 
 
 // axios GET function materials
 axios.get(queryUrl).then(function (results) {
-"https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp";
+            "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp";
+}
 
-
-
-
-
-
-// axios.get('')
-//     .then(response => {
-//         console.log(response.data.url);
-//         console.log(response.data.explanation);
-//     })
-//     .catch(error => {
-//         console.log(error);
-//     });
+ axios.get('')
+ .then(response => {
+     console.log(response.data.url);
+     console.log(response.data.explanation);
+ })
+ .catch(error => {
+     console.log(error);
+ });
