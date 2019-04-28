@@ -75,7 +75,7 @@ function movieThis() {
     );
 };
 
-function bandtThis() {
+function bandThis() {
     var bandInput = process.argv[3];
     var queryUrl = "https://rest.bandsintown.com/artists/" + bandInput + "/events?app_id=codingbootcamp";
     axios.get(queryUrl).then(
@@ -105,7 +105,7 @@ function liri() {
     } else if (process.argv[2] === 'movie-this') {
         movieThis();
     } else if (process.argv[2] === 'band-this') {
-        bandtThis();
+        bandThis();
     } else {
         console.log("------------command not recognized------------");
     }
